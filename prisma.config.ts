@@ -8,6 +8,7 @@ export default defineConfig({
     seed: 'tsx prisma/seed.ts',
   },
   datasource: {
-    url: env('DATABASE_URL'),
+    // process.env (not env()) so `prisma generate` / npm install work without a DB
+    url: process.env.DATABASE_URL ?? '',
   },
 })
