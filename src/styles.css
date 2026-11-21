@@ -9,3 +9,36 @@ label { display: grid; gap: 0.25rem; }
 input, textarea, button { font: inherit; padding: 0.75rem; min-height: 44px; }
 button[aria-pressed='true'] { outline: 2px solid currentColor; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+/* Admin */
+.muted { color: #666; }
+.small { font-size: 0.85rem; }
+.link { background: none; border: none; padding: 0; min-height: 0; text-decoration: underline; cursor: pointer; color: inherit; }
+.button { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem; min-height: 44px; border: 1px solid; color: inherit; text-decoration: none; }
+.admin-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem; }
+.admin-header h1 { margin: 0; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 0; }
+.stats div { border: 1px solid #ddd; padding: 0.75rem; }
+.stats dt { font-size: 0.85rem; color: #666; }
+.stats dd { margin: 0; font-size: 1.5rem; font-weight: 600; }
+.toolbar { display: grid; grid-template-columns: 1fr auto; gap: 0.5rem; }
+.toolbar input { grid-column: 1 / -1; }
+.toolbar select { font: inherit; padding: 0.75rem; min-height: 44px; }
+.rsvp-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; }
+.rsvp-card { border: 1px solid #ddd; padding: 1rem; display: grid; gap: 0.25rem; }
+.rsvp-main { display: flex; justify-content: space-between; gap: 0.5rem; align-items: center; }
+.badge { font-size: 0.8rem; padding: 0.1rem 0.5rem; border: 1px solid; }
+.badge.yes { color: #1a7f37; }
+.badge.no { color: #a40e26; }
+.notes { margin: 0.25rem 0; font-style: italic; }
+.actions { display: flex; gap: 0.5rem; justify-content: flex-end; }
+.danger { color: #a40e26; }
+.dialog { width: min(32rem, 100% - 2rem); border: 1px solid #ddd; padding: 1.25rem; }
+.dialog::backdrop { background: rgb(0 0 0 / 0.4); }
+@media (min-width: 40rem) {
+  .container:has(.rsvp-list) { max-width: 56rem; }
+  .stats { grid-template-columns: repeat(4, 1fr); }
+  .toolbar { grid-template-columns: 1fr auto auto; }
+  .toolbar input { grid-column: auto; }
+  .rsvp-list { grid-template-columns: 1fr 1fr; }
+}

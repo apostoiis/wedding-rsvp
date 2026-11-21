@@ -1,6 +1,8 @@
 import { Hono } from 'hono'
 import { logger } from 'hono/logger'
 import { prisma } from './db'
+import { admin } from './routes/admin'
+import { auth } from './routes/auth'
 import { rsvp } from './routes/rsvp'
 
 export const app = new Hono().basePath('/api')
@@ -17,6 +19,8 @@ app.get('/health', async (c) => {
 })
 
 app.route('/rsvp', rsvp)
+app.route('/auth', auth)
+app.route('/admin', admin)
 
 app.notFound((c) => c.json({ ok: false, error: 'not_found' }, 404))
 app.onError((err, c) => {

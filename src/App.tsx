@@ -1,9 +1,10 @@
+import { AdminApp } from './admin/AdminApp'
 import { RsvpForm } from './RsvpForm'
 
-// Two pages only, so no router yet: /admin arrives on day 6.
+// Two pages only, so no router yet.
 export function App() {
   if (location.pathname.startsWith('/admin')) {
-    return <main className="container"><h1>Admin</h1><p>Coming soon.</p></main>
+    return <main className="container"><AdminApp /></main>
   }
   return (
     <main className="container">
